@@ -41,27 +41,27 @@ Por favor marca a continuación los ejercicios que hayáis terminado:
 > **2.1 Intro a la programación**
 
 - [x] 1. Crea el proyecto
-- [ ] 2. Entiende el código html y css del proyecto
-- [ ] 3. Modificar clases CSS desde JS
-- [ ] 4. Guarda la información en variables
+- [x] 2. Entiende el código html y css del proyecto
+- [x] 3. Modificar clases CSS desde JS
+- [x] 4. Guarda la información en variables
 
 > **2.2. Intro a la programación II**
 
-- [ ] 1. Trabajar con variables e interpolarlas
-- [ ] 2.  Bonus: Convertir cadenas de carácteres
-- [ ] 3. Bonus: Reemplaza contenido
+- [x] 1. Trabajar con variables e interpolarlas
+- [x] 2.  Bonus: Convertir cadenas de carácteres
+- [x] 3. Bonus: Reemplaza contenido
 
 > **2.3. Condicionales**
 
-- [ ] 1. Búsqueda por descripción
-- [ ] 2. Mostrar/ocultar el formulario añadir
-- [ ] 3. Bonus: No se ha especificado la raza, ¿qué se muestra entonces?
+- [x] 1. Búsqueda por descripción
+- [x] 2. Mostrar/ocultar el formulario añadir
+- [x] 3. Bonus: No se ha especificado la raza, ¿qué se muestra entonces?
 
 > **2.4. Eventos**
 
-- [ ] 1. Mostrar/ocultar formulario
-- [ ] 2. Validar formulario nuevo gatito
-- [ ] 3. Validar formulario búsqueda
+- [x] 1. Mostrar/ocultar formulario
+- [x] 2. Validar formulario nuevo gatito
+- [x] 3. Validar formulario búsqueda
 
 > **2.5. Funciones**
 
