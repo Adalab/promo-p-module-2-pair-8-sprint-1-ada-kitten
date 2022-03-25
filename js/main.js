@@ -113,14 +113,14 @@ input_search_desc.value = 'Maine Coon';
 
 const icon = document.querySelector('.js_icon');
 
-icon.addEventListener('click', (event) => {
-  event.preventDefault();
-  if (newForm.classList.contains('collapsed')) {
-    newForm.classList.remove('collapsed');
-  } else {
-    newForm.classList.add('collapsed');
-  }
-});
+// icon.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   if (newForm.classList.contains('collapsed')) {
+//     newForm.classList.remove('collapsed');
+//   } else {
+//     newForm.classList.add('collapsed');
+//   }
+// });
 
 //2. Validar formulario nuevo gatito
 // const buttonAdd = document.querySelector('.js-btn-add');
@@ -132,6 +132,7 @@ icon.addEventListener('click', (event) => {
 const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
 const inputName = document.querySelector('.js-input-name');
+const inputRace =document.querySelector('.js-input-race')
 const labelMesageError = document.querySelector('.js-label-error');
 
 //"Debe rellenar todos los valores".
@@ -142,6 +143,7 @@ buttonAdd.addEventListener('click', (event) => {
   const valueDesc = inputDesc.value;
   const valuePhoto = inputPhoto.value;
   const valueName = inputName.value;
+  const valueRace = inputRace.value;
   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
     labelMesageError.innerHTML = 'Debe rellenar todos los valores';
   } else {
@@ -168,6 +170,49 @@ const buttonCancel = document.querySelector('.js_buttonCancel');
 buttonCancel.addEventListener('click', (event) => {
   event.preventDefault();
   newForm.classList.add('collapsed');
-});
 
-//Recuerda también limpiar los valores de los inputs.
+  //Recuerda también limpiar los valores de los inputs.
+
+  inputDesc.value="";
+  inputName.value="";
+  inputPhoto.value="";
+  inputRace.value="";
+
+})
+
+//Ejercicio 1 Funciones
+
+function showNewCatForm(){
+    newForm.classList.remove('collapsed');
+}
+
+function hideNewCatForm(){
+    newForm.classList.add('collapsed');
+}
+//funcion manejadora
+function handleClickNewCatForm(event) {
+    event.preventDefault();
+
+
+    if (newForm.classList.contains('collapsed')) {
+       showNewCatForm();
+    
+      } else {
+        hideNewCatForm();
+      }
+  }
+
+  icon.addEventListener('click', handleClickNewCatForm);
+
+  //Ejercicio  2 Funciones
+
+  
+  function renderKitten(photo, desc, name, race) {
+    this.inputPhoto= valuePhoto;
+    this.inputDesc= valueDesc;
+    this.inputName= valueName;
+    this.inputRace= valueRace;
+  }
+
+  const gato1= renderKitten ("http","bonita","Michi", "perritocaliente" );
+  console.log(gato1);
