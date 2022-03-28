@@ -58,54 +58,54 @@ newForm.classList.remove('collapsed');
 //4. Bonus: No se ha especificado la raza, ¿qué se muestra entonces?
 // No se ha especificado la raza.
 
-let html = '';
-if (kittenRace1 === '') {
-  html += `<h3 class='card_race'>No se ha especificado la raza</h3>`;
-} else {
-  html = kittenRace1;
-}
-if (kittenDesc.includes(descrSearchText)) {
-  listName.innerHTML += `<li class="card"> 
-  ${kittenImage}
-  <h3 class="card_title">${kittenName.toUpperCase()}</h3>
-  <h4 class="card_race">${html}</h4>
-  <p class="card_description">
-  ${kittenDesc}
-  </p>
-</li>`;
-}
+// let html = '';
+// if (kittenRace1 === '') {
+//   html += `<h3 class='card_race'>No se ha especificado la raza</h3>`;
+// } else {
+//   html = kittenRace1;
+// }
+// if (kittenDesc.includes(descrSearchText)) {
+//   listName.innerHTML += `<li class="card"> 
+//   ${kittenImage}
+//   <h3 class="card_title">${kittenName.toUpperCase()}</h3>
+//   <h4 class="card_race">${html}</h4>
+//   <p class="card_description">
+//   ${kittenDesc}
+//   </p>
+// </li>`;
+// }
 
-if (kittenRace2 === '') {
-  html += `<h3 class='card_race'>No se ha especificado la raza</h3>`;
-} else {
-  html = kittenRace2;
-}
-if (kittenDesc2.includes(descrSearchText)) {
-  listName.innerHTML += `<li class="card"> 
-  ${kittenImage2}
-  <h3 class="card_title">${kittenName2.toUpperCase()}</h3>
-  <h4 class="card_race">${html}</h4>
-  <p class="card_description">
-  ${kittenDesc2}
-  </p>
-</li>`;
-}
+// if (kittenRace2 === '') {
+//   html += `<h3 class='card_race'>No se ha especificado la raza</h3>`;
+// } else {
+//   html = kittenRace2;
+// }
+// if (kittenDesc2.includes(descrSearchText)) {
+//   listName.innerHTML += `<li class="card"> 
+//   ${kittenImage2}
+//   <h3 class="card_title">${kittenName2.toUpperCase()}</h3>
+//   <h4 class="card_race">${html}</h4>
+//   <p class="card_description">
+//   ${kittenDesc2}
+//   </p>
+// </li>`;
+// }
 
-if (kittenRace3 === '') {
-  html += `<h3 class='card_race'>No se ha especificado la raza</h3>`;
-} else {
-  html = kittenRace3;
-}
-if (kittenDesc3.includes(descrSearchText)) {
-  listName.innerHTML += `<li class="card"> 
-  ${kittenImage3}
-  <h3 class="card_title">${kittenName3.toUpperCase()}</h3>
-  <h4 class="card_race">${html}</h4>
-  <p class="card_description">
-  ${kittenDesc3}
-  </p>
-</li>`;
-}
+// if (kittenRace3 === '') {
+//   html += `<h3 class='card_race'>No se ha especificado la raza</h3>`;
+// } else {
+//   html = kittenRace3;
+// }
+// if (kittenDesc3.includes(descrSearchText)) {
+//   listName.innerHTML += `<li class="card"> 
+//   ${kittenImage3}
+//   <h3 class="card_title">${kittenName3.toUpperCase()}</h3>
+//   <h4 class="card_race">${html}</h4>
+//   <p class="card_description">
+//   ${kittenDesc3}
+//   </p>
+// </li>`;
+// }
 
 input_search_desc.value = 'Maine Coon';
 
@@ -205,14 +205,36 @@ function handleClickNewCatForm(event) {
   icon.addEventListener('click', handleClickNewCatForm);
 
   //Ejercicio  2 Funciones
-
+   
   
   function renderKitten(photo, desc, name, race) {
-    this.inputPhoto= valuePhoto;
-    this.inputDesc= valueDesc;
-    this.inputName= valueName;
-    this.inputRace= valueRace;
+
+  listName.innerHTML += `<li class="card"> 
+  ${photo}
+  <h3 class="card_title">${name.toUpperCase()}</h3>
+  <h4 class="card_race">${race}</h4>
+  <p class="card_description">
+  ${desc}
+  </p>
+</li>`;
+  
   }
 
-  const gato1= renderKitten ("http","bonita","Michi", "perritocaliente" );
-  console.log(gato1);
+  renderKitten ("http", "bonita","Kitty","perritocaliente" );
+  renderKitten ("http", "simpatico","ivan","3" );
+  renderKitten ("https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",'Ruiseño, juguetón, le gusta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!', "Anastacio", "Bristish shorthair")
+  renderKitten ("https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg","Cariñoso, simpático, le gusta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!", "fiona","Maine Coon")
+  renderKitten ('<img src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg"/>', 'Revoltoso, le gusta molestar y jugar. Es una maravilla acariciarle!', "cielo", "persa")
+
+  //3 ejercicio de las funciones
+
+  //modifica el evento para cumplir una función manejadora
+
+function addNewKitten(event) {
+
+  event.preventDefault(); //eventDefault es un método
+  const catInfo = renderKitten();
+  paintHtml(catInfo); //ejecutando la estructura
+}
+
+buttonAdd.addEventListener('click', renderKitten);
